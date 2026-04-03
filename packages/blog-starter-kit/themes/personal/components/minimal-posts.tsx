@@ -8,12 +8,13 @@ type Props = {
 
 export const MinimalPosts = ({ posts }: Props) => {
 	return (
-		<section className="flex w-full flex-col items-stretch gap-10 lg:max-w-lg">
+		<section className="flex w-full flex-col items-stretch gap-10">
 			{posts.map((post) => (
 				<MinimalPostPreview
 					key={post.id}
 					title={post.title}
 					date={post.publishedAt}
+					excerpt={post.brief}
 					author={{
 						name: post.author.name,
 					}}

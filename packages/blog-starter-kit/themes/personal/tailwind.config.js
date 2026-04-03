@@ -12,7 +12,14 @@ module.exports = {
 				'accent-7': '#333',
 				success: '#0070f3',
 				cyan: '#79FFE1',
-				primary: colors.blue,
+				primary: colors.neutral,
+			},
+			fontFamily: {
+				serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+				sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+			},
+			maxWidth: {
+				reading: '680px',
 			},
 			typography: () => ({
 				DEFAULT: {
