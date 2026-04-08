@@ -2,7 +2,14 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import Link from 'next/link';
 import { PublicationNavbarItem } from '../generated/graphql';
 import { useAppContext } from './contexts/appContext';
+import { GithubSVG, LinkedinSVG, XSVG } from './icons/svgs';
 import { ToggleTheme } from './toggle-theme';
+
+const socialLinks = [
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/pchristou/', Icon: LinkedinSVG },
+	{ label: 'X', href: 'https://x.com/pchristou_', Icon: XSVG },
+	{ label: 'GitHub', href: 'https://github.com/pchristou', Icon: GithubSVG },
+];
 
 function hasUrl(
 	navbarItem: PublicationNavbarItem,
@@ -77,6 +84,21 @@ export const PersonalHeader = () => {
 			</h1>
 			<nav className="flex items-center gap-5">
 				{navList}
+				<ul className="flex list-none flex-row items-center gap-3 text-neutral-600 dark:text-neutral-400">
+					{socialLinks.map(({ label, href, Icon }) => (
+						<li key={href}>
+							<a
+								href={href}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label={label}
+								className="hover:text-black dark:hover:text-white"
+							>
+								<Icon className="h-5 w-5" />
+							</a>
+						</li>
+					))}
+				</ul>
 				<ToggleTheme />
 			</nav>
 		</header>
